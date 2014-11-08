@@ -67,3 +67,7 @@ This is up for debate, but some ideas we've had are:
 * rake exercise:load_foods      # Loads Foods data from CSV
 * rake exercise:load_items      # Loads Items data from CSV
 
+##Results
+* set secret: AbsurdCalorieBurner::Application.config.secret_token = '9ea458654cc7622b8ea174asdkufh9efyisuhefs90'
+* start rails app with rails s
+* run this from the command line http://gifsforum.com/gif_generator/gif_created/bc01e0cbed398f705a11636004f4d463.gif?1415483250788
