@@ -7,10 +7,10 @@ Info
 ----
 
 Information on how to calculate metabolic burn rates:  
-[Calculate calories burned](http://www.livestrong.com/article/18303-calculate-calories-burned/)  
-[METS calculation](http://www.my-calorie-counter.com/mets_calculation.asp)
-[MET rates for activity](https://sites.google.com/site/compendiumofphysicalactivities/home)
-[Cancer.giv MET values](http://appliedresearch.cancer.gov/atus-met/met.php)
+* [Calculate calories burned](http://www.livestrong.com/article/18303-calculate-calories-burned/)
+* [METS calculation](http://www.my-calorie-counter.com/mets_calculation.asp)
+* [MET rates for activity](https://sites.google.com/site/compendiumofphysicalactivities/home)
+* [Cancer.gov MET values](http://appliedresearch.cancer.gov/atus-met/met.php)
 
 TODO
 ----
@@ -40,7 +40,19 @@ We need to alter this to: find length of time for a given exercise, find weight 
 
 
 ### Iteration 2
+This is up for debate, but some ideas we've had are:
+
+##### UI
 * Show what foods you're burning off (# of Big Macs, chicken nuggets, etc)
+  * Data research to grab several foods from different restaurants
+  * Grab data from candy bars, ice cream, pizza, etc.
+* Convert added pounds to household items (microwave, rocking chair, recliner, tv, etc.)
+
+##### Backend
+* Bound additional weight multiplier to depend on a selected item
+* Load data into memory rather than db
 
 ### Iteration 3
 * List view of different exercies
+  * Order by time (most to least)
+* Easter eggs?
