@@ -1,5 +1,5 @@
-namespace :exercise do
-  desc 'Deletes Exercise data from Database'
+namespace :datafy do
+  desc 'Deletes all data from Database'
   task :del => :environment do
     ActiveRecord::Base.connection.execute("TRUNCATE TABLE exercises")
     ActiveRecord::Base.connection.execute("TRUNCATE TABLE items")

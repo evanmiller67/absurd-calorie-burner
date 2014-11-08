@@ -62,10 +62,8 @@ This is up for debate, but some ideas we've had are:
 * Run rake db:seed_fu
 
 ##Loading Data
-* rake exercise:del             # Deletes Exercise data from Database
-* rake exercise:load_exercises  # Loads Exercise data from CSV
-* rake exercise:load_foods      # Loads Foods data from CSV
-* rake exercise:load_items      # Loads Items data from CSV
+* rake datafy:load_data       # Loads Exercise data from CSV
+* rake datafy:del             # Deletes Exercise data from Database
 
 ##Results
 * touch config/initializers/secret_token.rb 
