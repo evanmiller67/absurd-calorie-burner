@@ -1,21 +1,99 @@
-Title,Calories,,,
-Big Mac,550,,,
-Whopper,650,,,
-Happy Meal,520,,,
-Bean Burrito,370,,,
-Double Decker Taco,340,,,
-Grape,0.2419,,,
-Tater tot,17.7777,,,
-Peanut butter cracker,31.6666,*should these be plural or singular?,,I'm expecting that these need to be singular so that they can be multiplied. -JB
-Chocolate Donut,195,,,
-Chicken Tender,46.25,,,
-Cheez-It,5.5555,,,
-bag of Funions,110,,,
-Bud Light,110,,,
-Colt 45,176,,,
-Schlitz,146,,,
-Sam Adam's Boston Lager,160,,,
-Corn Dog,460,,,
-Red Bull,110,,,
-Orange,45,,,
-Twinkie,270,,,
+Title,Calories
+Big Mac,550
+Whopper,650
+Happy Meal,520
+Bean Burrito,370
+Double Decker Taco,340
+Grape,0.2419
+Tater tot,17.7777
+Peanut butter cracker,31.6666
+Chocolate Donut,195
+Chicken Tender,46.25
+Cheez-It,5.5555
+bag of Funions,110
+Bud Light,110
+Colt 45,176
+Schlitz,146
+Sam Adam's Boston Lager,160
+Corn Dog,460
+Red Bull,110
+Orange,45
+Twinkie,270
+Kimchi,8
+Geoduck,82
+Poi,269
+Dried Bananas,200
+Cactus Apples,150
+Jackfruit,157
+Fried Pickles,174
+Dulse,80
+Durian,66
+Fufu,267
+Fried Okra,350
+Marmite,10
+Poutine,740
+Seaweed,50
+Habanero Peppers,15
+Gingko Seeds,52
+Sea slugs,25
+Fried Crickets,200
+Oysters,175
+Herring,291
+Crawfish,15
+Fish Ceviche,173
+Gefilte fish,77
+Prawn heads,4
+Fermented shark,324
+Beef Tongue,1536
+Octopus,139
+Pot of Jellied Eels,196
+Fish eyes,30
+Cod tongues,72
+Drunken shrimp,236
+Fish flotation bladder soup,100
+Chicken livers,76
+Balut,80
+A slice of Turducken,900
+Duck feet,9
+Owl soup,100
+Creamy Monkey toes,155.6
+Squirrel brain,49
+Sheep head,2420
+Banana,105
+Stewed doormice,552
+Spam,84
+Cup of camel's milk,107
+Haggis,1149
+Seal flipper pie,1200
+Cockscombs,23
+Turtle Eggs,100
+Iguana,306
+Texas Rattlesnake,2046
+Fried Frog Legs,69
+Chicken Pot Pie,380
+Scorpion,311
+Tequila Worms,160
+Grasshoppers,153
+Marshmallows,26
+Cup of Jell-O,70
+Chewing gum,15
+Fried Mars Bars,1200
+Shaved Ice,50
+Snail,7
+Lemonheads,35
+A cup of Grits,182
+Maple Bacon,80
+A spoon of Peanut Butter,94
+Pickled pigs feet,177
+Reindeer Hot Dogs,16
+Fried Anchovies,125
+Chitlins,198
+Goetta,70
+Deep-fried Cheese Curds,570
+Bull Testicles,135
+Frito Pie,250
+Alligator Sausage,251
+Half cup of Pistachio Pineapple Delight,160
+Slice of Red Velvet Cake,853
+Mayonnaise,94
+Sunflower seeds,162
