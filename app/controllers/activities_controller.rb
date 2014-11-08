@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
     height = params[:height].to_i
     weight = params[:weight].to_i
     age    = params[:age].to_i
+    equivalents = Food.equivalent_to(cals)
 
     if [true,false].sample
       # find an absurd weight
@@ -36,14 +37,7 @@ class ActivitiesController < ApplicationController
       additional_weight: additional_weight,
       exercise_name: exercise.title,
       item: item.name,
-      equivalent:
-        {
-          #Iteration 2
-          #name: food.name,
-          #quantity: equivalent_amount
-          name: nil,
-          quantity: nil
-        }
+      equivalent: equivalents
     }
 
     respond_with resp
