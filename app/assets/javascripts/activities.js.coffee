@@ -1,13 +1,22 @@
 app = angular.module("absurdCalorie", ['ngResource'])
 
-app.factory "Exercise", ($resource) ->
-  $resource("/activities/search", {index: {method: "GET" }} )
+app.controller "ActivitesCtrl", ["$scope", ($scope) ->
+  $scope.sessionVariables = null
 
-app.controller "ActivitesCtrl", [
-  "$scope"
-  "Exercise"
-  ($scope, Exercise) ->
-    $scope.exercises = Exercise.query()
+
+
+  $scope.getResult = () ->
+    $http.get("/activities/search", params: {
+        calories: sessionVariables.calories,
+        gender: sessionVariables.gender,
+        height: sessionVariables.height,
+        weight: sessionVariables.weight,
+        age: sessionVariables.age
+      }
+    ).success((data) ->
+      $scope.exercise = data
+  ).error (data) ->
+
 
 ]
 
