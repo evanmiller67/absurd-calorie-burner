@@ -28,7 +28,7 @@ The 'standard' MET calculation looks like:
 We need to alter this to: find length of time for a given exercise, find weight required for a given time
 
 * Create library for calculating
-  * Formula Inputs: Weight, Time, METs
+  * Formula Inputs: Weight, Time (in minutes), METs
   * Formula Outputs: Calories Burned
   * Method for finding weight
   * Method for finding time
