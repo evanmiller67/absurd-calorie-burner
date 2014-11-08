@@ -70,4 +70,4 @@ This is up for debate, but some ideas we've had are:
 ##Results
 * set secret: AbsurdCalorieBurner::Application.config.secret_token = '9ea458654cc7622b8ea174asdkufh9efyisuhefs90'
 * start rails app with rails s
-* run this from the command line http://gifsforum.com/gif_generator/gif_created/bc01e0cbed398f705a11636004f4d463.gif?1415483250788
+* run this from the command line curl "localhost:3000/activities/search?calories=1000&gender=f&height=72&age=29&weight=180"
