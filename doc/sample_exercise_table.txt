@@ -1,0 +1,8 @@
+Exercise Table
+
+Name | Calories Burned Per Minute | Intensity (low, medium, high)
+
+Examples:
+Walking | 0.2 | low
+Walking | 0.5 | medium
+Walking | 1.0 | high
