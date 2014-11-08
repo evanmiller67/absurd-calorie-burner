@@ -3,7 +3,6 @@ AbsurdCalorieBurner::Application.routes.draw do
   get "activities/index"
   get "activities/search"
 
-  resources :exercises
 
 
   # The priority is based upon order of creation:

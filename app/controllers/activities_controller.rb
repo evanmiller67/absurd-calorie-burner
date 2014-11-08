@@ -38,7 +38,7 @@ class ActivitiesController < ApplicationController
       exercise_name: exercise.title,
       exercise_url: exercise.url,
       item: item.name,
-      equivalent: equivalents
+      equivalents: equivalents
     }
 
     respond_with resp
