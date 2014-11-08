@@ -1,4 +1,4 @@
-class Calculate
+module Calculate
   # Calculate additional weight from the amount of calories to burn, starting weight, mets of activity and time
   # This is using the standard MET calculation:
   #   Calories per hour = Weight in KG * MET
