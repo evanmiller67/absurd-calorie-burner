@@ -57,3 +57,6 @@ This is up for debate, but some ideas we've had are:
 * List view of different exercies
   * Order by time (most to least)
 * Easter eggs?
+
+### Seeding your db
+* Run rake db:seed_fu
