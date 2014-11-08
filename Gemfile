@@ -15,6 +15,9 @@ gem 'haml-rails'
 # Add HAML Conversion
 gem 'html2haml'
 
+# Progressbar
+gem 'ruby-progressbar'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
