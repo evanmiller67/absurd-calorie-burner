@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
-  include Mets::Calculate
-  include ExerciseCalculator
+  # include Mets::Calculate
+  # include ExerciseCalculator
   respond_to :json
 
   def index

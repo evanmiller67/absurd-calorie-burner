@@ -1,7 +1,41 @@
 %div{"ng-controller" => "ActivitesCtrl"}
-  %h1 Activities#index
-  %p Find me in app/views/activities/index.html.haml
-  %p This is some dummy angular text that can be removed later!!!!
+  .formContainer
+    %form
+      %ul
+        %li
+          %input{type: :text, placeholder: 'Gender' }
+        %li
+          %input{type: :text, placeholder: 'Height' }
+        %li
+          %input{type: :text, placeholder: 'Weight' }
+        %li
+          %input{type: :text, placeholder: 'Age'    } 
+        %li
+          %input{type: :text, placeholder: 'Calories' }
+        %li
+          %button{type: :button}
+            %span Next
+
+  .exercise_profile
+    %ul
+      %li 
+        Name
+      %li 
+        Time
+      %li
+        Additional Weight
+    %button{type: :button}
+      %span Yes
+    %button{type: :button}
+      %span No
+
+  .do_it
+    %p
+      You Better Do It
+
+  .why
+    %p
+      Why Not?
 
   %button.btn.btn-success{:type => "button"} Success
 
