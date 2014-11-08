@@ -9,9 +9,6 @@ gem 'mysql2'
 gem 'faker'
 gem 'seed-fu', '~> 2.3'
 
-# Add Foundation 5 Support for Angular FE
-gem 'angularjs-foundation-rails'
-
 # Add HAML
 gem 'haml-rails'
 
