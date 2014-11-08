@@ -3,6 +3,6 @@ namespace :exercise do
   task :del => :environment do
     ActiveRecord::Base.connection.execute("TRUNCATE TABLE exercises")
     ActiveRecord::Base.connection.execute("TRUNCATE TABLE items")
-    ctiveRecord::Base.connection.execute("TRUNCATE TABLE foods")
+    ActiveRecord::Base.connection.execute("TRUNCATE TABLE foods")
   end
 end
