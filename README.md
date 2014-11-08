@@ -68,6 +68,6 @@ This is up for debate, but some ideas we've had are:
 * rake exercise:load_items      # Loads Items data from CSV
 
 ##Results
-* set secret: AbsurdCalorieBurner::Application.config.secret_token = '9ea458654cc7622b8ea174asdkufh9efyisuhefs90'
+* vi config/initializers/secret_token.rb -> add secret: AbsurdCalorieBurner::Application.config.secret_token = '9ea458654cc7622b8ea174asdkufh9efyisuhefs90'
 * start rails app with rails s
 * run this from the command line curl "localhost:3000/activities/search?calories=1000&gender=f&height=72&age=29&weight=180"
