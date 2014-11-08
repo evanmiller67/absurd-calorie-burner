@@ -7,6 +7,7 @@ gem 'rails', '3.2.14'
 
 gem 'mysql2'
 gem 'faker'
+gem 'seed-fu', '~> 2.3'
 
 # Add HAML
 gem 'haml-rails'
