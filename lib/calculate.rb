@@ -1,4 +1,4 @@
-module Calculate
+class Calculate
   # Calculate additional weight from the amount of calories to burn, starting weight, mets of activity and time
   # This is using the standard MET calculation:
   #   Calories per hour = Weight in KG * MET
@@ -46,14 +46,13 @@ module Calculate
   # This is based on the equations:
   #   Female: BMR = (13.75 x WKG) + (5 x HC) - (6.76 x age) + 66
   #   Male:   BMR = (9.56 x WKG) + (1.85 x HC) - (4.68 x age) + 655
-  def self.weight_from_bmr_gender_centimeters_and_age(bmr, gender, centimeters, age)
+  def self.additional_weight_from_bmr_gender_centimeters_and_age(bmr, gender, centimeters, age)
     if gender.downcase[0] == 'f'
       (bmr - 655.0 + (4.68 * age) - (1.85 * centimeters)) / 9.56
     else
       (bmr - 66.0 + (6.76 * age) - (5 * centimeters)) / 13.75
     end
   end
-
 
   def self.lb_to_kg(weight)
     weight * 0.45359237
