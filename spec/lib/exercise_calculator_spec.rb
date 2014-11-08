@@ -34,4 +34,14 @@ describe ExerciseCalculator do
       expect(ExerciseCalculator.adjusted_hbrmr(hbrmr, weight)).to eq(2.7132390820525747)
     end
   end
+
+  context "Converting height and weight" do
+    it "converts a height from inches to centimeters" do
+      expect(ExerciseCalculator.convert_height_to_cm(60)).to eq(152.4)
+    end
+
+    it "converts a weight from pounds to kilograms" do
+      expect(ExerciseCalculator.convert_weight_to_kg(225)).to eq(102.06)
+    end
+  end
 end
