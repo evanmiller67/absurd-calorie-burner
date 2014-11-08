@@ -1,2 +1,8 @@
-%h1 Activities#index
-%p Find me in app/views/activities/index.html.haml
+%div{"ng-controller" => "ActivitesCtrl"}
+  %h1 Activities#index
+  %p Find me in app/views/activities/index.html.haml
+  %p This is some dummy angular text that can be removed later!!!!
+
+  %ul
+    %li{"ng-repeat" => "entry in exercises"}
+      {{entry.name}}
