@@ -22,8 +22,8 @@ TODO
 * Compile list of exercies and their MET rate
 
 ##### Backend
-The 'standard' MET calculation looks like:
-      Calories burned per hour = Weight(KG) * Mets
+The 'standard' MET calculation looks like:  
+      Calories burned per hour = Weight(KG) * METs
 
 We need to alter this to: find length of time for a given exercise, find weight required for a given time
 
@@ -43,6 +43,7 @@ We need to alter this to: find length of time for a given exercise, find weight 
 This is up for debate, but some ideas we've had are:
 
 ##### UI
+* Embed youtube video of exercise
 * Show what foods you're burning off (# of Big Macs, chicken nuggets, etc)
   * Data research to grab several foods from different restaurants
   * Grab data from candy bars, ice cream, pizza, etc.
