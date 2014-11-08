@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @exercise.name
+%p
+  %b Cbpm:
+  = @exercise.cbpm
+%p
+  %b Intensity:
+  = @exercise.intensity
+= link_to 'Edit', edit_exercise_path(@exercise)
+|
+\#{link_to 'Back', exercises_path}
