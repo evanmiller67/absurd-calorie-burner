@@ -17,8 +17,8 @@ TODO
 
 ### Iteration 1
 
-* Decide bounds on time (maximum and minimum amounts)
-* Bounds on weight (current bodyweight multiplier), e.g. no more than 3x current body weight
+* Decide bounds on time (5m to 48h)
+* Bounds on weight (current bodyweight multiplier), e.g. no more than 3x current body weight (carry an additional 2X body weight)
 * Compile list of exercies and their MET rate
 
 ##### Backend
