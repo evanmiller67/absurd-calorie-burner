@@ -36,6 +36,7 @@ class ActivitiesController < ApplicationController
       time: time,
       additional_weight: additional_weight,
       exercise_name: exercise.title,
+      exercise_url: exercise.url,
       item: item.name,
       equivalent: equivalents
     }
