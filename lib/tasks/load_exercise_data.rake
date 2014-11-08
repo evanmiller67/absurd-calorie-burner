@@ -3,7 +3,7 @@ require 'csv'
 namespace :exercise do
   desc 'Loads Exercise data from CSV'
     task :load_exercises => :environment do
-      exercise_keys = [:met, :title]
+      exercise_keys = [:met, :title, :url]
       f = CSV.open("exercises.csv", "r")
       f.drop(1).each do |r|
       h = Hash[exercise_keys.zip r]
@@ -20,4 +20,14 @@ namespace :exercise do
       Item.create!(h)
     end
   end
+
+  desc 'Loads Foods data from CSV'
+    task :load_foods => :environment do
+      food_keys = [:name, :calories]
+      f = CSV.open("foods.csv", "r")
+      f.drop(1).each do |r|
+      h = Hash[food_keys.zip r]
+      Food.create!(h)
+    end
+  end  
 end
