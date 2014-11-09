@@ -166,13 +166,21 @@ body {
 }
 
 .height-input {
-  width: 15% !important;
+  width: 5% !important;
 }
 
 .height-text {
   margin-left: 40px;
 }
 
+.weight {
+  width: 40% !important;
+}
+
+.age {
+  width: 30% !important;
+  margin-left: 40px;
+}
 
 /*
  * Wizard steps

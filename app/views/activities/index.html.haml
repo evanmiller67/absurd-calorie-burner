@@ -28,30 +28,39 @@
             .steps#step_2.clearfix{ 'ng-switch-when' => 'step_2'  }
               %h2 What is your roster height?
               %h2.pull-left.adjust-text I am
-              %input.pull-left.form-control.adjust.height-input{ placeholder: '7 ft', 'ng-model' => 'sessionVariables.feet' }
-              %h2.pull-left.adjust-text.height-text and
-              %input.pull-left.form-control.adjust.height-input{ placeholder: '2 in', 'ng-model' => 'sessionVariables.inches' }
-              %h2.pull-left.adjust-text.height-text tall
+              %input.pull-left.form-control.adjust.height-input{ placeholder: '7', 'ng-model' => 'sessionVariables.feet' }
+              %h2.pull-left.adjust-text.height-text feet and
+              %input.pull-left.form-control.adjust.height-input{ placeholder: '2', 'ng-model' => 'sessionVariables.inches' }
+              %h2.pull-left.adjust-text.height-text inches tall
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_3")' }
                 %span Next
             .steps#step_3.clearfix{ 'ng-switch-when' => 'step_3'  }
-              %input.pull-left.form-control{ placeholder: 'Weight', 'ng-model' => 'sessionVariables.weight' }
+              %h2 About how may stones are you?
+              %h2.pull-left.adjust-text I weigh
+              %input.pull-left.form-control.adjust.weight{ placeholder: '185', 'ng-model' => 'sessionVariables.weight' }
+              %h2.pull-left.adjust-text.height-text pounds
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_4")' }
                 %span Next
             .steps#step_4.clearfix{ 'ng-switch-when' => 'step_4'  }
-              %input.pull-left.form-control{ placeholder: 'Age', 'ng-model' => 'sessionVariables.age' }
+              %h2 How many birthdays have you seen?
+              %h2.pull-left.adjust-text.height-text I am
+              %input.pull-left.form-control.age{ placeholder: '12', 'ng-model' => 'sessionVariables.age' }
+              %h2.pull-left.adjust-text.height-text years young
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_5")' }
                 %span Next
             .steps#step_5.clearfix{ 'ng-switch-when' => 'step_5'  }
-              %input.pull-left.form-control{ placeholder: 'Calories', 'ng-model' => 'sessionVariables.calories' }
+              %h2 How many calories do you want to burn?
+              %h2.pull-left.adjust-text.height-text I just ate
+              %input.pull-left.form-control.age{ placeholder: '2000', 'ng-model' => 'sessionVariables.calories' }
+              %h2.pull-left.adjust-text.height-text calories
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("show_results"); getResult()' }
                 %span Finish
 
-            .exercise_profile{ 'ng-switch-when' => 'show_results'  }
+            .exercise_profile.steps{ 'ng-switch-when' => 'show_results'  }
               %img{ src: "{{exercise.exercise_url}}" }
+              %h2
+                {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}lb. {{ exercise.item }}
               %br
-              {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}lb. {{ exercise.item }}
-              %br 
               %button{type: :button, 'ng-click' => '' }
                 %span Yes
               %button{type: :button, 'ng-click' => 'addStep("show_results"); getResult()' }
