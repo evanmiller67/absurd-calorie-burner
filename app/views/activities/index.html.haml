@@ -2,10 +2,6 @@
   .site-wrapper
     .site-wrapper-inner
       .cover-container
-        #logo
-          / = image_tag(asset_path('splashpage_graphic_test.gif'))
-          / = image_tag(asset_path('splashpage_graphic_test3.jpg'))
-          = image_tag(asset_path('test.png'))
         .masthead.clearfix
           .inner
             %h4.masthead-brand
@@ -13,6 +9,10 @@
               Calorie Burner
         .inner.cover
           .formContainer{ 'ng-switch' => '', :on => 'stepWizard' }
+            #logo{ 'ng-switch-when' => 'start' }
+              / = image_tag(asset_path('splashpage_graphic_test.gif'))
+              / = image_tag(asset_path('splashpage_graphic_test3.jpg'))
+              = image_tag(asset_path('test.png'))
             .steps#start.clearfix{ 'ng-switch-when' => 'start'  }
               %h2 Are you ready to burn some calories?
               %button.btn.btn-danger{ type: :button, 'ng-click' => 'addStep("step_1")' }
@@ -20,8 +20,8 @@
             .steps#step_1.clearfix{ 'ng-switch-when' => 'step_1'  }
               %h2 What gender would you like to be?
               %h2.pull-left.adjust-text I feel like a
-              %select.form-control.adjust
-                %option{:value => "m", 'ng-model' => 'sessionVariables.gender'} Man
+              %select.form-control.adjust{'ng-model' => 'sessionVariables.gender'}
+                %option{:value => "m"} Man
                 %option{:value => "f"} Woman
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_2")' }
                 %span Next
@@ -32,47 +32,50 @@
               %h2.pull-left.adjust-text.height-text and
               %input.pull-left.form-control.adjust.height-input{ placeholder: '2 in', 'ng-model' => 'sessionVariables.inches' }
               %h2.pull-left.adjust-text.height-text tall
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_1")' }
+                %span Back
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_3")' }
                 %span Next
             .steps#step_3.clearfix{ 'ng-switch-when' => 'step_3'  }
               %input.pull-left.form-control{ placeholder: 'Weight', 'ng-model' => 'sessionVariables.weight' }
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_2")' }
+                %span Back
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_4")' }
                 %span Next
             .steps#step_4.clearfix{ 'ng-switch-when' => 'step_4'  }
               %input.pull-left.form-control{ placeholder: 'Age', 'ng-model' => 'sessionVariables.age' }
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_3")' }
+                %span Back
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_5")' }
                 %span Next
             .steps#step_5.clearfix{ 'ng-switch-when' => 'step_5'  }
               %input.pull-left.form-control{ placeholder: 'Calories', 'ng-model' => 'sessionVariables.calories' }
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_4")' }
+                %span Back
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("show_results"); getResult()' }
                 %span Finish
 
-            .exercise_profile{ 'ng-switch-when' => 'show_results'  }
-              %img{ src: "{{exercise.exercise_url}}" }
-              %br
-              {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}lb. {{ exercise.item }}
+            .exercise_profile{ 'ng-switch-when' => 'show_results' }
+              %img{ :src => "{{exercise.exercise_url}}", 'ng-hide' => 'showBeast' }
+              %br{ 'ng-hide' => 'showBeast' }
+              %p{ 'ng-hide' => 'showBeast' }
+                {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}lb. {{ exercise.item }}
+              }
               %br 
-              %button{type: :button, 'ng-click' => '' }
+              %button{type: :button, 'ng-click' => 'showBeast = true', 'ng-hide' => 'showBeast'}
                 %span Yes
-              %button{type: :button, 'ng-click' => 'addStep("show_results"); getResult()' }
+              %button{type: :button, 'ng-click' => 'addStep("show_results"); getResult()', 'ng-hide' => 'showBeast' }
                 %span No
 
-              .do_it
+              .do_it{ 'ng-show' => 'showBeast' }
                 %p
                   You're A Beast!
+                = image_tag(asset_path("beast-mode-#{(1..11).to_a.sample()}.jpg"))
 
-              .why
+              .why{ 'ng-show' => 'showWuss' }
                 %p
                   Why Not?
 
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_1")' }
+                %span Reload!
 
-
-
-        / .mastfoot
-        /   .inner
-        /     %p
-        /       Cover template for
-        /       = succeed "," do
-        /         %a{:href => "http://getbootstrap.com"} Bootstrap
-        /       = succeed "." do
-        /         %a{:href => "https://twitter.com/mdo"} @mdo
