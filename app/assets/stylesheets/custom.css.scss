@@ -35,26 +35,14 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #F0F6FB;
 }
 body {
   letter-spacing: 2px;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Montserrat', sans-serif;
 }
-
-// .body_image {
-//   background: url(/assets/bad_food.jpg) no-repeat center center fixed;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-// }
-
-// .body_image:after {
-//   opacity: 0.5;
-// }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -62,8 +50,8 @@ body {
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  // -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  //         box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -139,15 +127,8 @@ body {
  */
 
 #logo {
-  margin: 60px auto 0;
+  margin: 0 auto 0;
   text-align: center;
-}
-
-#logo img {
-  width: 18em;
-  height: auto;
-  margin: 10px auto;
-  opacity: .8;
 }
 
 .formContainer input, .formContainer select {
@@ -186,15 +167,15 @@ body {
  * Wizard steps
  */
 .steps {
-  background: rgba(116, 116, 116, 0.3);
+  // background: #fff;
   width: 85%;
   margin: 0 auto;
   padding: 2% 5%;
-  box-shadow: 1px 1px 6px #2A2A2A;
+  // box-shadow: 1px 1px 6px #2A2A2A;
 }
 
 .steps h2, .exercise_profile h2 {
-  color: #fff;
+  // color: #fff;
   margin-bottom: 30px;
   line-height: 1.5;
   font-size: 40px;
