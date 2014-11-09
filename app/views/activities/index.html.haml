@@ -3,7 +3,7 @@
     .site-wrapper-inner
       .cover-container
         .masthead.clearfix
-          .logo-box
+          .logo-box{ type: :button, 'ng-click' => 'addStep("start")' }
             = image_tag(asset_path('burger.png'))
             = image_tag(asset_path('banner.png'), :style => 'height: 40px')
         .inner.cover
