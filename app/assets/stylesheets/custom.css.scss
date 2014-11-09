@@ -72,6 +72,7 @@ body {
 .cover-container {
   margin-right: auto;
   margin-left: auto;
+  width: 1000px !important;
 }
 
 /* Padding for spacing */
@@ -83,6 +84,7 @@ body {
 /*
  * Header
  */
+
 .masthead-brand {
   color: #fff;
   margin-top: 10px;
@@ -137,7 +139,7 @@ body {
  */
 
 #logo {
-  margin: 0 auto;
+  margin: 60px auto 0;
   text-align: center;
 }
 
@@ -149,7 +151,7 @@ body {
 }
 
 .formContainer input {
-  width: 84%;
+  // width: 84%;
   height: 54px;
   font-size: 26px;
 }

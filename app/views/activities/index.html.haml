@@ -19,7 +19,17 @@
                 %span Hell, Yeah!
             .steps#step_1.clearfix{ 'ng-switch-when' => 'step_1'  }
               %h2 Do you have a penis or a vagina?
-              %p.pull-left I am
+              %p.pull-left I have a
+              .btn-group
+                %button.btn.btn-danger{:type => "button"} Action
+                %button.btn.btn-danger.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+                  %span.caret
+                  %span.sr-only Toggle Dropdown
+                %ul.dropdown-menu{:role => "menu"}
+                  %li
+                    %a{:value => "m"} Action
+                  %li
+                    %a{:value => "f"} Another action
               %input.pull-left.form-control{ placeholder: 'Gender', 'ng-model' => 'sessionVariables.gender'   }
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_2")' }
                 %span Next
