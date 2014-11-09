@@ -2,7 +2,7 @@ app = angular.module("absurdCalorie", ['ngResource'])
 
 app.controller "ActivitesCtrl", ["$scope", "$http", ($scope, $http) ->
   $scope.sessionVariables = {}
-  $scope.stepWizard = "step_1"
+  $scope.stepWizard = "start"
 
   $scope.addStep = (step) ->
     $scope.stepWizard = step
