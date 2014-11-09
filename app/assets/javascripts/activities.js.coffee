@@ -8,16 +8,11 @@ app.controller "ActivitesCtrl", ["$scope", "$http", ($scope, $http) ->
   $scope.addStep = (step) ->
     $scope.stepWizard = step
 
-  $scope.heightInInches = (height) ->
-    f = height
-    rex = /^(\d+)'(\d+)''$/
-    match = rex.exec(f)
-    feet = undefined
-    inch = undefined
-    if match
-      feet = parseInt(match[1], 10)
-      inch = parseInt(match[2], 10)
-    return ((feet * 12) + inch)
+  $scope.heightInInches = (feet, inches) ->
+    return ((parseInt(feet) * 12) + parseInt(inches))
+
+  $scope.getRandomInt = (min, max) ->
+    Math.floor(Math.random() * (max - min + 1)) + min
 
   $scope.getResult = () ->
     checkKeys = Object.keys($scope.sessionVariables).length
@@ -25,7 +20,7 @@ app.controller "ActivitesCtrl", ["$scope", "$http", ($scope, $http) ->
     $http.get("/activities/search.json", params: {
         calories: $scope.sessionVariables.calories,
         gender: $scope.sessionVariables.gender,
-        height: $scope.sessionVariables.height,
+        height: $scope.heightInInches($scope.sessionVariables.feet, $scope.sessionVariables.inches),
         weight: $scope.sessionVariables.weight,
         age: $scope.sessionVariables.age
       }

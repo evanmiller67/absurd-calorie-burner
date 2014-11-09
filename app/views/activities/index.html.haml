@@ -2,70 +2,78 @@
   .site-wrapper
     .site-wrapper-inner
       .cover-container
-        #logo
-          / = image_tag(asset_path('splashpage_graphic_test.gif'))
-          / = image_tag(asset_path('splashpage_graphic_test3.jpg'))
-          = image_tag(asset_path('test.png'))
         .masthead.clearfix
-          .inner
-            %h4.masthead-brand
-              %em Absurd
-              Calorie Burner
         .inner.cover
           .formContainer{ 'ng-switch' => '', :on => 'stepWizard' }
+            #logo{ 'ng-switch-when' => 'start' }
+              / = image_tag(asset_path('splashpage_graphic_test.gif'))
+              / = image_tag(asset_path('splashpage_graphic_test3.jpg'))
+              = image_tag(asset_path('test.png'))
             .steps#start.clearfix{ 'ng-switch-when' => 'start'  }
-              %h2 Are you ready to burn some fucking calories?
+              %h2 Are you ready to burn some calories?
               %button.btn.btn-danger{ type: :button, 'ng-click' => 'addStep("step_1")' }
-                %span Hell, Yeah!
+                %span Git Er Done!
             .steps#step_1.clearfix{ 'ng-switch-when' => 'step_1'  }
-              %h2 Do you have a penis or a vagina?
-              %p.pull-left I am
-              %input.pull-left.form-control{ placeholder: 'Gender', 'ng-model' => 'sessionVariables.gender'   }
+              %h2 What gender would you like to be?
+              %h2.pull-left.adjust-text I feel like a
+              %select.form-control.adjust{'ng-model' => 'sessionVariables.gender'}
+                %option{:value => "m"} Man
+                %option{:value => "f"} Woman
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_2")' }
                 %span Next
             .steps#step_2.clearfix{ 'ng-switch-when' => 'step_2'  }
-              %input.pull-left.form-control{ placeholder: 'Height', 'ng-model' => 'sessionVariables.height'   }
+              %h2 What is your roster height?
+              %h2.pull-left.adjust-text I am
+              %input.pull-left.form-control.adjust.height-input{ 'ng-model' => 'sessionVariables.feet' }
+              %h2.pull-left.adjust-text.height-text feet and
+              %input.pull-left.form-control.adjust.height-input{ 'ng-model' => 'sessionVariables.inches' }
+              %h2.pull-left.adjust-text.height-text inches tall
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_3")' }
                 %span Next
             .steps#step_3.clearfix{ 'ng-switch-when' => 'step_3'  }
-              %input.pull-left.form-control{ placeholder: 'Weight', 'ng-model' => 'sessionVariables.weight'   }
+              %h2 About how may stones are you?
+              %h2.pull-left.adjust-text I weigh
+              %input.pull-left.form-control.adjust.weight{ 'ng-model' => 'sessionVariables.weight' }
+              %h2.pull-left.adjust-text.height-text pounds
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_4")' }
                 %span Next
             .steps#step_4.clearfix{ 'ng-switch-when' => 'step_4'  }
-              %input.pull-left.form-control{ placeholder: 'Age', 'ng-model' => 'sessionVariables.age'      }
+              %h2 How many birthdays have you seen?
+              %h2.pull-left.adjust-text.height-text I am
+              %input.pull-left.form-control.age{ 'ng-model' => 'sessionVariables.age' }
+              %h2.pull-left.adjust-text.height-text years young
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_5")' }
                 %span Next
             .steps#step_5.clearfix{ 'ng-switch-when' => 'step_5'  }
-              %input.pull-left.form-control{ placeholder: 'Calories', 'ng-model' => 'sessionVariables.calories' }
+              %h2 How many calories do you want to burn?
+              %h2.pull-left.adjust-text.height-text I just ate
+              %input.pull-left.form-control.age{ 'ng-model' => 'sessionVariables.calories' }
+              %h2.pull-left.adjust-text.height-text calories
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("show_results"); getResult()' }
                 %span Finish
 
-            .exercise_profile{ 'ng-switch-when' => 'show_results'  }
-              %img{ src: "{{exercise.exercise_url}}" }
+            .exercise_profile.steps.clearfix{ 'ng-switch-when' => 'show_results' }
+              %img{ :src => "{{exercise.exercise_url}}", 'ng-hide' => 'showBeast' }
+              %br{ 'ng-hide' => 'showBeast' }
+              %h2{ 'ng-hide' => 'showBeast' }
+                {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}lb. {{ exercise.item }}
+              }
               %br
-              {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}lb. {{ exercise.item }}
-              %br 
-              %button{type: :button, 'ng-click' => '' }
-                %span Yes
-              %button{type: :button, 'ng-click' => 'addStep("show_results"); getResult()' }
-                %span No
+              %button.btn.btn-danger{type: :button, 'ng-click' => 'showBeast = true', 'ng-hide' => 'showBeast'}
+                %span Sounds good
 
-              .do_it
-                %p
+              %button.btn.btn-danger{type: :button, 'ng-click' => 'addStep("show_results"); getResult()', 'ng-hide' => 'showBeast' }
+                %span Maybe not this
+
+              .do_it{ 'ng-show' => 'showBeast' }
+                %h2
                   You're A Beast!
+                = image_tag(asset_path("beast-mode-#{(1..11).to_a.sample()}.jpg"))
 
-              .why
-                %p
+              .why{ 'ng-show' => 'showWuss' }
+                %h2
                   Why Not?
 
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_1")' }
+                %span Reload!
 
-
-
-        / .mastfoot
-        /   .inner
-        /     %p
-        /       Cover template for
-        /       = succeed "," do
-        /         %a{:href => "http://getbootstrap.com"} Bootstrap
-        /       = succeed "." do
-        /         %a{:href => "https://twitter.com/mdo"} @mdo

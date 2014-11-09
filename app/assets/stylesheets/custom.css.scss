@@ -72,6 +72,7 @@ body {
 .cover-container {
   margin-right: auto;
   margin-left: auto;
+  width: 90% !important;
 }
 
 /* Padding for spacing */
@@ -83,6 +84,7 @@ body {
 /*
  * Header
  */
+
 .masthead-brand {
   color: #fff;
   margin-top: 10px;
@@ -137,24 +139,48 @@ body {
  */
 
 #logo {
-  margin: 0 auto;
+  margin: 60px auto 0;
   text-align: center;
 }
 
 #logo img {
-  width: 20em;
+  width: 18em;
   height: auto;
   margin: 10px auto;
   opacity: .8;
 }
 
-.formContainer input {
-  width: 84%;
+.formContainer input, .formContainer select {
+  width: 50%;
   height: 54px;
   font-size: 26px;
 }
 
+.adjust {
+  float: left;
+  margin-left: 43px;
+}
 
+.adjust-text {
+  margin-top: -4px;
+}
+
+.height-input {
+  width: 7% !important;
+}
+
+.height-text {
+  margin-left: 40px;
+}
+
+.weight {
+  width: 40% !important;
+}
+
+.age {
+  width: 30% !important;
+  margin-left: 40px;
+}
 
 /*
  * Wizard steps
@@ -163,11 +189,11 @@ body {
   background: rgba(116, 116, 116, 0.3);
   width: 85%;
   margin: 0 auto;
-  padding: 2%;
+  padding: 2% 5%;
   box-shadow: 1px 1px 6px #2A2A2A;
 }
 
-.steps h2 {
+.steps h2, .exercise_profile h2 {
   color: #fff;
   margin-bottom: 30px;
   line-height: 1.5;
