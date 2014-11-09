@@ -6,7 +6,11 @@ app.controller "ActivitesCtrl", ["$scope", "$http", ($scope, $http) ->
   $scope.stepWizard = "start"
 
   $scope.addStep = (step) ->
-    $scope.stepWizard = step
+    if step == 'reload'
+      $scope.sessionVariables = {}
+      $scope.stepWizard = 'step_1'
+    else
+      $scope.stepWizard = step
 
   $scope.heightInInches = (feet, inches) ->
     return ((parseInt(feet) * 12) + parseInt(inches))

@@ -3,7 +3,7 @@
     .site-wrapper-inner
       .cover-container
         .masthead.clearfix
-          .logo-box{ type: :button, 'ng-click' => 'addStep("start")' }
+          .logo-box{ type: :button, 'ng-click' => 'addStep("reload")' }
             = image_tag(asset_path('burger.png'))
             = image_tag(asset_path('banner.png'), :style => 'height: 40px')
         .inner.cover
@@ -75,8 +75,8 @@
 
               .why{ 'ng-show' => 'showWuss' }
                 %h2
-                  Why Not?
+                  Why Not??
 
-              %button.btn.btn-info.pull-right{ type: :button, 'ng-click' => 'addStep("step_1")', 'ng-show' => 'showBeast' }
+              %button.btn.btn-info.pull-right{ type: :button, 'ng-click' => 'addStep("reload")', 'ng-show' => 'showBeast' }
                 %span Reload!
 
