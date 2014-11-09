@@ -54,7 +54,7 @@
               %img{ :src => "{{exercise.exercise_url}}", 'ng-hide' => 'showBeast' }
               %br{ 'ng-hide' => 'showBeast' }
               %h2{ 'ng-hide' => 'showBeast' }
-                {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}lb. {{ exercise.item }}
+                {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}-pound {{ exercise.item }}.
               %br
               %h2
                 You will burn off the equivalent of {{exercise.food_quantity}} {{exercise.food_name}}.
