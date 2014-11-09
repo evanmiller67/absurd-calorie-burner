@@ -7,11 +7,11 @@ app.controller "ActivitesCtrl", ["$scope", ($scope) ->
 
   $scope.getResult = () ->
     $http.get("/activities/search", params: {
-        calories: sessionVariables.calories,
-        gender: sessionVariables.gender,
-        height: sessionVariables.height,
-        weight: sessionVariables.weight,
-        age: sessionVariables.age
+        calories: $scope.sessionVariables.calories,
+        gender: $scope.sessionVariables.gender,
+        height: $scope.sessionVariables.height,
+        weight: $scope.sessionVariables.weight,
+        age: $scope.sessionVariables.age
       }
     ).success((data) ->
       $scope.exercise = data
