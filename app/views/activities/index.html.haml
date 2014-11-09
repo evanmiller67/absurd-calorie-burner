@@ -58,7 +58,8 @@
               %h2{ 'ng-hide' => 'showBeast' }
                 {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}lb. {{ exercise.item }}
               %br
-              You will burn off the equivalent of {{exercise.food_quantity}} {{exercise.food_name}}.
+              %h2
+                You will burn off the equivalent of {{exercise.food_quantity}} {{exercise.food_name}}.
               %br
               %button.btn.btn-danger{type: :button, 'ng-click' => 'showBeast = true', 'ng-hide' => 'showBeast'}
                 %span Sounds good
