@@ -1,6 +1,7 @@
 app = angular.module("absurdCalorie", ['ngResource'])
 
 app.controller "ActivitesCtrl", ["$scope", "$http", ($scope, $http) ->
+  $scope.Math = window.Math
   $scope.sessionVariables = {}
   $scope.stepWizard = "start"
 
@@ -21,7 +22,7 @@ app.controller "ActivitesCtrl", ["$scope", "$http", ($scope, $http) ->
   $scope.getResult = () ->
     checkKeys = Object.keys($scope.sessionVariables).length
     return if checkKeys == 0 && checkKeys < 5
-    $http.get("/activities/search", params: {
+    $http.get("/activities/search.json", params: {
         calories: $scope.sessionVariables.calories,
         gender: $scope.sessionVariables.gender,
         height: $scope.sessionVariables.height,

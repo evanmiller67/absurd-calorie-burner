@@ -41,21 +41,18 @@
                 %span Finish
 
             .exercise_profile{ 'ng-switch-when' => 'show_results'  }
-              %ul
-                %li
-                  Name
-                %li
-                  Time
-                %li
-                  Additional Weight
+              %img{ src: "{{exercise.exercise_url}}" }
+              %br
+              {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}lb. {{ exercise.item }}
+              %br 
               %button{type: :button}
                 %span Yes
-              %button{type: :button}
+              %button{type: :button, 'ng-click' => 'addStep("show_results"); getResult()' }
                 %span No
 
               .do_it
                 %p
-                  You Better Do It
+                  You're A Beast!
 
               .why
                 %p
