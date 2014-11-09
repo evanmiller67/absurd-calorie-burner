@@ -4,32 +4,33 @@
       .cover-container
         #logo
           = image_tag(asset_path('splashpage_graphic_test.jpg'))
-        .masthead.clearfix
-          .inner
-            %h3.masthead-brand Cover
-
         .inner.cover
-          %h1.cover-heading Cover your page.
-          %p.lead Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
-          %p.lead
-            %a.btn.btn-lg.btn-default{:href => "#"} Learn more
-
-          .formContainer
-            %form
-              %ul
-                %li
-                  %input{type: :text, placeholder: 'Gender' }
-                %li
-                  %input{type: :text, placeholder: 'Height' }
-                %li
-                  %input{type: :text, placeholder: 'Weight' }
-                %li
-                  %input{type: :text, placeholder: 'Age'    }
-                %li
-                  %input{type: :text, placeholder: 'Calories' }
-                %li
-                  %button{type: :button}
-                    %span Next
+          .formContainer{ 'ng-switch' => '', :on => 'stepWizard' }
+            #step_1{ 'ng-switch-when' => 'step_1'  }
+              %input{ placeholder: 'Gender', 'ng-model' => 'sessionVariables.gender'   }
+              %br
+              %button{ type: :button, 'ng-click' => 'addStep("step_2")' }
+                %span Next
+            #step_2{ 'ng-switch-when' => 'step_2'  }
+              %input{ placeholder: 'Height', 'ng-model' => 'sessionVariables.height'   }
+              %br
+              %button{ type: :button, 'ng-click' => 'addStep("step_3")' }
+                %span Next
+            #step_3{ 'ng-switch-when' => 'step_3'  }
+              %input{ placeholder: 'Weight', 'ng-model' => 'sessionVariables.weight'   }
+              %br
+              %button{ type: :button, 'ng-click' => 'addStep("step_4")' }
+                %span Next
+            #step_4{ 'ng-switch-when' => 'step_4'  }      
+              %input{ placeholder: 'Age', 'ng-model' => 'sessionVariables.age'      }
+              %br
+              %button{ type: :button, 'ng-click' => 'addStep("step_5")' }
+                %span Next
+            #step_5{ 'ng-switch-when' => 'step_5'  }
+              %input{ placeholder: 'Calories', 'ng-model' => 'sessionVariables.calories' }
+              %br
+              %button{ type: :button, 'ng-click' => 'addStep("getResult(sessionVariables)")' }
+                %span Finish
 
           .exercise_profile
             %ul
