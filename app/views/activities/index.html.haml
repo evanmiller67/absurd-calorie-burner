@@ -9,64 +9,63 @@
             %h4.masthead-brand
               %em Absurd
               Calorie Burner
-
         .inner.cover
-          %h1.cover-heading Cover your page.
-          %p.lead Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
-          %p.lead
-            %a.btn.btn-lg.btn-default{:href => "#"} Learn more
+          .formContainer{ 'ng-switch' => '', :on => 'stepWizard' }
+            #step_1{ 'ng-switch-when' => 'step_1'  }
+              %input{ placeholder: 'Gender', 'ng-model' => 'sessionVariables.gender'   }
+              %br
+              %button{ type: :button, 'ng-click' => 'addStep("step_2")' }
+                %span Next
+            #step_2{ 'ng-switch-when' => 'step_2'  }
+              %input{ placeholder: 'Height', 'ng-model' => 'sessionVariables.height'   }
+              %br
+              %button{ type: :button, 'ng-click' => 'addStep("step_3")' }
+                %span Next
+            #step_3{ 'ng-switch-when' => 'step_3'  }
+              %input{ placeholder: 'Weight', 'ng-model' => 'sessionVariables.weight'   }
+              %br
+              %button{ type: :button, 'ng-click' => 'addStep("step_4")' }
+                %span Next
+            #step_4{ 'ng-switch-when' => 'step_4'  }
+              %input{ placeholder: 'Age', 'ng-model' => 'sessionVariables.age'      }
+              %br
+              %button{ type: :button, 'ng-click' => 'addStep("step_5")' }
+                %span Next
+            #step_5{ 'ng-switch-when' => 'step_5'  }
+              %input{ placeholder: 'Calories', 'ng-model' => 'sessionVariables.calories' }
+              %br
+              %button{ type: :button, 'ng-click' => 'addStep("show_results"); getResult()' }
+                %span Finish
 
-          .formContainer
-            %form
+            .exercise_profile{ 'ng-switch-when' => 'show_results'  }
               %ul
                 %li
-                  %input{type: :text, placeholder: 'Gender' }
+                  Name
                 %li
-                  %input{type: :text, placeholder: 'Height' }
+                  Time
                 %li
-                  %input{type: :text, placeholder: 'Weight' }
-                %li
-                  %input{type: :text, placeholder: 'Age'    }
-                %li
-                  %input{type: :text, placeholder: 'Calories' }
-                %li
-                  %button{type: :button}
-                    %span Next
+                  Additional Weight
+              %button{type: :button}
+                %span Yes
+              %button{type: :button}
+                %span No
 
-          .exercise_profile
-            %ul
-              %li
-                Name
-              %li
-                Time
-              %li
-                Additional Weight
-            %button{type: :button}
-              %span Yes
-            %button{type: :button}
-              %span No
+              .do_it
+                %p
+                  You Better Do It
 
-          .do_it
-            %p
-              You Better Do It
-
-          .why
-            %p
-              Why Not?
-
-          %button.btn.btn-success{:type => "button"} Success
-
-          / %ul
-          /   %li{"ng-repeat" => "entry in exercise"}
-          /     {{entry.name}}
+              .why
+                %p
+                  Why Not?
 
 
 
-        .mastfoot
-          .inner
-            %p
-              Cover template for
-              = succeed "," do
-                %a{:href => "http://getbootstrap.com"} Bootstrap
-              = succeed "." do
-                %a{:href => "https://twitter.com/mdo"} @mdo
+
+        / .mastfoot
+        /   .inner
+        /     %p
+        /       Cover template for
+        /       = succeed "," do
+        /         %a{:href => "http://getbootstrap.com"} Bootstrap
+        /       = succeed "." do
+        /         %a{:href => "https://twitter.com/mdo"} @mdo

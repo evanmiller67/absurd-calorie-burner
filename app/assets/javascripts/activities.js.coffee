@@ -1,11 +1,26 @@
 app = angular.module("absurdCalorie", ['ngResource'])
 
-app.controller "ActivitesCtrl", ["$scope", ($scope) ->
-  $scope.sessionVariables = null
+app.controller "ActivitesCtrl", ["$scope", "$http", ($scope, $http) ->
+  $scope.sessionVariables = {}
+  $scope.stepWizard = "step_1"
 
+  $scope.addStep = (step) ->
+    $scope.stepWizard = step
 
+  $scope.heightInInches = (height) ->
+    f = height
+    rex = /^(\d+)'(\d+)''$/
+    match = rex.exec(f)
+    feet = undefined
+    inch = undefined
+    if match
+      feet = parseInt(match[1], 10)
+      inch = parseInt(match[2], 10)
+    return ((feet * 12) + inch)
 
   $scope.getResult = () ->
+    checkKeys = Object.keys($scope.sessionVariables).length
+    return if checkKeys == 0 && checkKeys < 5
     $http.get("/activities/search", params: {
         calories: $scope.sessionVariables.calories,
         gender: $scope.sessionVariables.gender,
@@ -15,8 +30,8 @@ app.controller "ActivitesCtrl", ["$scope", ($scope) ->
       }
     ).success((data) ->
       $scope.exercise = data
-  ).error (data) ->
 
+  ).error (data) ->
 
 ]
 
