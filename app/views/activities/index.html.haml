@@ -14,35 +14,32 @@
         .inner.cover
           .formContainer{ 'ng-switch' => '', :on => 'stepWizard' }
             .steps#start.clearfix{ 'ng-switch-when' => 'start'  }
-              %h2 Are you ready to burn some fucking calories?
+              %h2 Are you ready to burn some calories?
               %button.btn.btn-danger{ type: :button, 'ng-click' => 'addStep("step_1")' }
-                %span Hell, Yeah!
+                %span Git Er Done!
             .steps#step_1.clearfix{ 'ng-switch-when' => 'step_1'  }
-              %h2 Do you have a penis or a vagina?
-              %p.pull-left I have a
-              .btn-group
-                %button.btn.btn-danger{:type => "button"} Action
-                %button.btn.btn-danger.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
-                  %span.caret
-                  %span.sr-only Toggle Dropdown
-                %ul.dropdown-menu{:role => "menu"}
-                  %li
-                    %a{:value => "m"} Action
-                  %li
-                    %a{:value => "f"} Another action
-              %input.pull-left.form-control{ placeholder: 'Gender', 'ng-model' => 'sessionVariables.gender'   }
+              %h2 What gender would you like to be?
+              %h2.pull-left.adjust-text I feel like a
+              %select.form-control.adjust
+                %option{:value => "m", 'ng-model' => 'sessionVariables.gender'} Man
+                %option{:value => "f"} Woman
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_2")' }
                 %span Next
             .steps#step_2.clearfix{ 'ng-switch-when' => 'step_2'  }
-              %input.pull-left.form-control{ placeholder: 'Height', 'ng-model' => 'sessionVariables.height'   }
+              %h2 What is your roster height?
+              %h2.pull-left.adjust-text I am
+              %input.pull-left.form-control.adjust.height-input{ placeholder: '7 ft', 'ng-model' => 'sessionVariables.feet' }
+              %h2.pull-left.adjust-text.height-text and
+              %input.pull-left.form-control.adjust.height-input{ placeholder: '2 in', 'ng-model' => 'sessionVariables.inches' }
+              %h2.pull-left.adjust-text.height-text tall
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_3")' }
                 %span Next
             .steps#step_3.clearfix{ 'ng-switch-when' => 'step_3'  }
-              %input.pull-left.form-control{ placeholder: 'Weight', 'ng-model' => 'sessionVariables.weight'   }
+              %input.pull-left.form-control{ placeholder: 'Weight', 'ng-model' => 'sessionVariables.weight' }
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_4")' }
                 %span Next
             .steps#step_4.clearfix{ 'ng-switch-when' => 'step_4'  }
-              %input.pull-left.form-control{ placeholder: 'Age', 'ng-model' => 'sessionVariables.age'      }
+              %input.pull-left.form-control{ placeholder: 'Age', 'ng-model' => 'sessionVariables.age' }
               %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_5")' }
                 %span Next
             .steps#step_5.clearfix{ 'ng-switch-when' => 'step_5'  }

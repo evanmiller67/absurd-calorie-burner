@@ -72,7 +72,7 @@ body {
 .cover-container {
   margin-right: auto;
   margin-left: auto;
-  width: 1000px !important;
+  width: 90% !important;
 }
 
 /* Padding for spacing */
@@ -144,18 +144,34 @@ body {
 }
 
 #logo img {
-  width: 20em;
+  width: 18em;
   height: auto;
   margin: 10px auto;
   opacity: .8;
 }
 
-.formContainer input {
-  // width: 84%;
+.formContainer input, .formContainer select {
+  width: 50%;
   height: 54px;
   font-size: 26px;
 }
 
+.adjust {
+  float: left;
+  margin-left: 43px;
+}
+
+.adjust-text {
+  margin-top: -4px;
+}
+
+.height-input {
+  width: 15% !important;
+}
+
+.height-text {
+  margin-left: 40px;
+}
 
 
 /*
@@ -165,7 +181,7 @@ body {
   background: rgba(116, 116, 116, 0.3);
   width: 85%;
   margin: 0 auto;
-  padding: 2%;
+  padding: 2% 5%;
   box-shadow: 1px 1px 6px #2A2A2A;
 }
 
