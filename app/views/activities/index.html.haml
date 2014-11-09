@@ -6,9 +6,7 @@
         .inner.cover
           .formContainer{ 'ng-switch' => '', :on => 'stepWizard' }
             #logo{ 'ng-switch-when' => 'start' }
-              / = image_tag(asset_path('splashpage_graphic_test.gif'))
-              / = image_tag(asset_path('splashpage_graphic_test3.jpg'))
-              = image_tag(asset_path('test.png'))
+              = image_tag(asset_path('splash_graphic.png'))
             .steps#start.clearfix{ 'ng-switch-when' => 'start'  }
               %h2 Are you ready to burn some calories?
               %button.btn.btn-danger{ type: :button, 'ng-click' => 'addStep("step_1")' }
