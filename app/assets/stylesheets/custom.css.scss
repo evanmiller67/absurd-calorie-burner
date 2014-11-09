@@ -20,11 +20,9 @@ a:hover {
 }
 
 .btn {
+  background-color: #38BDC0;
   font-size: 26px;
   padding: 7px 25px;
-  -moz-box-shadow:    3px 3px 5px 1px #373636;
-  -webkit-box-shadow: 3px 3px 5px 1px #373636;
-  box-shadow:         3px 3px 5px 1px #373636;
 }
 
 
@@ -40,7 +38,6 @@ body {
 body {
   letter-spacing: 2px;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -60,7 +57,7 @@ body {
 .cover-container {
   margin-right: auto;
   margin-left: auto;
-  width: 90% !important;
+  width: 100% !important;
 }
 
 /* Padding for spacing */
@@ -72,6 +69,18 @@ body {
 /*
  * Header
  */
+
+.masthead {
+  width: 100% !important;
+  background-color: #38BDC0;
+  padding: 8px;
+}
+
+.inner.cover {
+  margin-top: 160px;
+}
+
+.logo-box { width: 30%; }
 
 .masthead-brand {
   color: #fff;
@@ -179,6 +188,7 @@ body {
   margin-bottom: 30px;
   line-height: 1.5;
   font-size: 40px;
+  font-weight: normal;
 }
 
 
