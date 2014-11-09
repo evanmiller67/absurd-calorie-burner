@@ -1,2 +1,71 @@
-%h1 Activities#index
-%p Find me in app/views/activities/index.html.haml
+%div{"ng-controller" => "ActivitesCtrl"}
+  .site-wrapper
+    .site-wrapper-inner
+      .cover-container
+        #logo
+          / = image_tag(asset_path('splashpage_graphic_test.gif'))
+          / = image_tag(asset_path('splashpage_graphic_test3.jpg'))
+          = image_tag(asset_path('test.png'))
+        .masthead.clearfix
+          .inner
+            %h4.masthead-brand
+              %em Absurd
+              Calorie Burner
+        .inner.cover
+          .formContainer{ 'ng-switch' => '', :on => 'stepWizard' }
+            .steps#start.clearfix{ 'ng-switch-when' => 'start'  }
+              %h2 Are you ready to burn some fucking calories?
+              %button.btn.btn-danger{ type: :button, 'ng-click' => 'addStep("step_1")' }
+                %span Hell, Yeah!
+            .steps#step_1.clearfix{ 'ng-switch-when' => 'step_1'  }
+              %h2 Do you have a penis or a vagina?
+              %p.pull-left I am
+              %input.pull-left.form-control{ placeholder: 'Gender', 'ng-model' => 'sessionVariables.gender'   }
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_2")' }
+                %span Next
+            .steps#step_2.clearfix{ 'ng-switch-when' => 'step_2'  }
+              %input.pull-left.form-control{ placeholder: 'Height', 'ng-model' => 'sessionVariables.height'   }
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_3")' }
+                %span Next
+            .steps#step_3.clearfix{ 'ng-switch-when' => 'step_3'  }
+              %input.pull-left.form-control{ placeholder: 'Weight', 'ng-model' => 'sessionVariables.weight'   }
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_4")' }
+                %span Next
+            .steps#step_4.clearfix{ 'ng-switch-when' => 'step_4'  }
+              %input.pull-left.form-control{ placeholder: 'Age', 'ng-model' => 'sessionVariables.age'      }
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("step_5")' }
+                %span Next
+            .steps#step_5.clearfix{ 'ng-switch-when' => 'step_5'  }
+              %input.pull-left.form-control{ placeholder: 'Calories', 'ng-model' => 'sessionVariables.calories' }
+              %button.btn.btn-danger.pull-right{ type: :button, 'ng-click' => 'addStep("show_results"); getResult()' }
+                %span Finish
+
+            .exercise_profile{ 'ng-switch-when' => 'show_results'  }
+              %img{ src: "{{exercise.exercise_url}}" }
+              %br
+              {{exercise.exercise_name}} for {{ Math.round(exercise.time / 60) }} hours, {{ Math.round(exercise.time % 60) }} minutes with a {{ Math.round(exercise.additional_weight) }}lb. {{ exercise.item }}
+              %br 
+              %button{type: :button, 'ng-click' => '' }
+                %span Yes
+              %button{type: :button, 'ng-click' => 'addStep("show_results"); getResult()' }
+                %span No
+
+              .do_it
+                %p
+                  You're A Beast!
+
+              .why
+                %p
+                  Why Not?
+
+
+
+
+        / .mastfoot
+        /   .inner
+        /     %p
+        /       Cover template for
+        /       = succeed "," do
+        /         %a{:href => "http://getbootstrap.com"} Bootstrap
+        /       = succeed "." do
+        /         %a{:href => "https://twitter.com/mdo"} @mdo

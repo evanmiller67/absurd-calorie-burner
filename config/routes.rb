@@ -1,9 +1,8 @@
 AbsurdCalorieBurner::Application.routes.draw do
 
+
   get "activities/index"
   get "activities/search"
-
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -62,6 +61,5 @@ AbsurdCalorieBurner::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  root :to => 'pages#home'
-  get "pages/home"
+  root :to => 'activities#index'
 end
