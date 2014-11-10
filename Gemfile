@@ -9,6 +9,9 @@ gem 'mysql2'
 gem 'faker'
 gem 'seed-fu', '~> 2.3'
 
+#Google Analytics
+gem 'google-analytics-rails'
+
 # Add HAML
 gem 'haml-rails'
 

@@ -1,6 +1,7 @@
 %html{"ng-app" => "absurdCalorie"}
   %head
     %title AbsurdCalorieBurner
+    = analytics_init if Rails.env.production?
     = stylesheet_link_tag    "application", :media => "all"
     %link{:href => "http://fonts.googleapis.com/css?family=Montserrat", :rel => "stylesheet", :type => "text/css"}/
     = javascript_include_tag "application"
